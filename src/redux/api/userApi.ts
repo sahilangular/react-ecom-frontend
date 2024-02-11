@@ -25,8 +25,9 @@ export const userApi = createApi({
     deleteUser:builder.mutation<messageRespose,deleteUserRequest>({
       query:({userId,adminId})=>({
         url:`${userId}?id=${adminId}`,
-        method:"DELETE"
-      })
+        method:"DELETE",
+      }),
+      invalidatesTags:['users']
     })
   }),
 });
